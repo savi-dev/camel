@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+    xmlns:jaxws="http://cxf.apache.org/jaxws"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://cxf.apache.org/jaxrs
+        http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd" >
+<jaxws:endpoint
+  id="multiply-ws"
+  implementor="ca.savi.camel.service.Multiply"
+  address="/multiply/ws" />
+
+<jaxrs:server id="multiply-rs" address="/multiply/rs">
+  <jaxrs:serviceBeans>
+    <bean class="ca.savi.camel.service.Multiply" />
+  </jaxrs:serviceBeans>
+</jaxrs:server>
+
+<jaxws:endpoint
+  id="aorresource-ws"
+  implementor="ca.savi.camel.service.AORResourceServiceImpl"
+  address="/AORResourceService" />
+</jaxrs:server>
+</beans>

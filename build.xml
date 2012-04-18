@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2012, The SAVI Project. All rights reserved.
+
+  Camel
+  Web service for a general resource
+
+  Eliot J. Kang <eliot@savinetwork.ca>
+-->
+<project name="camel" default="all"
+    xmlns:ivy="antlib:org.apache.ivy.ant">
+  <description>
+    Web service for a general resource
+  </description>
+
+  <!-- TODO: Fill these variables. -->
+  <property name="PROJECT_NAME" value="camel" />
+  <property name="VERSION" value="0.1" />
+  <property name="TEST_SUITE_CLASS" value="ca.savi.camel.test.TestSuite" />
+
+  <property name="DEBUG" value="true" />
+
+  <!-- DIRECTORIES -->
+  <property name="SAVI_HOME" value="../" />
+  <property name="PROJECT_HOME" value="./" />
+	<property name="FRONT_HOME" value="../front/" />
+
+  <property name="BUILD_DIR" value="${PROJECT_HOME}/build/" />
+  <property name="CLASSES_DIR" value="${PROJECT_HOME}/build/classes/" />
+  <property name="DIST_DIR" value="${PROJECT_HOME}/dist/" />
+  <property name="GEN_DIR" value="${PROJECT_HOME}/build/gen-src/" />
+  <property name="GEN_SRC_DIR" value="${PROJECT_HOME}/${GEN_DIR}/java/" />
+  <property name="LIB_DIR" value="${PROJECT_HOME}/build/lib/" />
+  <property name="FRONT_LIB_DIR" value="${FRONT_HOME}/build/lib/" />
+  <property name="FRONT_DIST_DIR" value="${FRONT_HOME}/dist/" />
+	<property name="RESOURCES_DIR" value="resources/" />
+  <property name="SRC_DIR" value="${PROJECT_HOME}/src/java/" />
+  <property name="SRC_TEST_DIR" value="${PROJECT_HOME}/test/java/" />
+
+  <!-- CLASSPATH -->
+  <path id="classpath.lib">
+    <fileset dir="${LIB_DIR}" includes="*.jar" />
+    <fileset dir="${FRONT_LIB_DIR}" includes="*.jar" />
+    <fileset dir="${FRONT_DIST_DIR}" includes="*.jar" />
+  </path>
+
+  <path id="classpath.all">
+    <path refid="classpath.lib" />
+    <pathelement location="${CLASSES_DIR}" />
+  </path>
+
+  <!-- TARGETS -->
+  <target name="all" depends="build">
+  </target>
+
+  <target name="dist" depends="build">
+    <war destfile="${DIST_DIR}/${PROJECT_NAME}-${VERSION}.war"
+      webxml="${RESOURCES_DIR}/WEB-INF/web.xml">
+      <classes  dir="${CLASSES_DIR}" excludes="**/WEB-INF,**/WEB-INF/*"/>
+      <lib dir="${LIB_DIR}" excludes="**/*servlet*"/>
+      <webinf dir="${RESOURCES_DIR}/WEB-INF/" />
+    </war>
+  </target>
+
+  <target name="distjar" depends="build">
+    <jar destfile="${DIST_DIR}/${PROJECT_NAME}-${VERSION}.jar">
+      <fileset dir="${CLASSES_DIR}">
+        <include name="**/*"/>
+      </fileset>
+    </jar>
+  </target>
+
+  <target name="build" depends="deps">
+    <javac srcdir="${SRC_DIR}:${GEN_SRC_DIR}"
+        includeantruntime="false" destdir="${CLASSES_DIR}" debug="${DEBUG}">
+      <classpath refid="classpath.lib" />
+    </javac>
+    <copy todir="${CLASSES_DIR}">
+      <fileset dir="${RESOURCES_DIR}">
+        <include name="**/*" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="test" depends="build-test">
+    <junit>
+      <classpath refid="classpath.all" />
+      <formatter type="brief" usefile="false" />
+      <test name="${TEST_SUITE_CLASS}" />
+    </junit>
+  </target>
+
+  <target name="build-test" depends="build">
+    <javac srcdir="${SRC_TEST_DIR}:${GEN_SRC_DIR}"
+        includeantruntime="false" destdir="${CLASSES_DIR}" debug="${DEBUG}">
+      <classpath refid="classpath.lib" />
+    </javac>
+  </target>
+
+  <target name="deps" depends="prepare">
+    <ivy:configure file="ivy-settings.xml" override="true"/>
+    <ivy:retrieve refresh="true" type="jar,bundle"
+        pattern="${LIB_DIR}/[artifact].[ext]" />
+  </target>
+
+  <target name="prepare">
+    <mkdir dir="${BUILD_DIR}" />
+    <mkdir dir="${CLASSES_DIR}" />
+    <mkdir dir="${DIST_DIR}" />
+    <mkdir dir="${GEN_DIR}" />
+    <mkdir dir="${GEN_SRC_DIR}" />
+    <mkdir dir="${LIB_DIR}" />
+    <ant antfile="${FRONT_HOME}/build.xml" inheritall="false"
+        inheritrefs="false" target="dist" />
+  </target>
+
+  <target name="clean">
+    <delete dir="${BUILD_DIR}">
+    </delete>
+    <delete dir="${DIST_DIR}">
+    </delete>
+  </target>
+</project>

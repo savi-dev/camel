@@ -1,0 +1,6 @@
+[Dependencies]
+required = savi/front
+optional =
+
+[Lint]
+max_columns=80
