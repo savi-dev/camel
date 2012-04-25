@@ -10,18 +10,18 @@
         http://cxf.apache.org/schemas/jaxws.xsd" >
 <jaxws:endpoint
   id="multiply-ws"
-  implementor="ca.savi.camel.service.Multiply"
+  implementor="ca.savi.camel.service.example.Multiply"
   address="/multiply/ws" />
 
 <jaxrs:server id="multiply-rs" address="/multiply/rs">
   <jaxrs:serviceBeans>
-    <bean class="ca.savi.camel.service.Multiply" />
+    <bean class="ca.savi.camel.service.example.Multiply" />
   </jaxrs:serviceBeans>
 </jaxrs:server>
 
 <jaxws:endpoint
   id="aorresource-ws"
-  implementor="ca.savi.camel.service.AORResourceServiceImpl"
+  implementor="ca.savi.camel.service.AORResourceService"
   address="/AORResourceService" />
 </jaxrs:server>
 </beans>

@@ -3,7 +3,8 @@ package ca.savi.camel.server;
 
 import java.io.IOException;
 
-import ca.savi.camel.service.AORResourceServiceImpl;
+import ca.savi.camel.service.AORResourceService;
+import ca.savi.camel.service.example.Multiply;
 import ca.savi.front.FrontServer;
 
 /**
@@ -15,7 +16,7 @@ import ca.savi.front.FrontServer;
 public class CamelServer {
   public static void main(String[] args) throws IOException {
    FrontServer f = new FrontServer("0.0.0.0", 9876, false);
-   f.register(AORResourceServiceImpl.class);
+   f.register(Multiply.class, AORResourceService.class);
    f.start();
   }
 }
