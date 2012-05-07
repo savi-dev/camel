@@ -43,103 +43,136 @@ import ca.savi.camel.model.TerminateResponse;
  * @version
  */
 @WebService(
-    name = "AORResourceService",
-    targetNamespace = "http://camel.savi.ca/wsdl/AORResource")
+    serviceName = "AORResourceService",
+    portName = "AORResourcePortTypeBindingPort",
+    endpointInterface = "ca.savi.camel.service.AORResourcePortType",
+    targetNamespace = "http://camel.savi.ca/AORResource")
 public class AORResourceService implements AORResourcePortType {
   @Override
   public GetResponse aorResourceGet(GetRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    GetResponse out = new GetResponse();
+    out.setSuccessful(true);
+    out.setError("Get generic resource");
+    return out;
   }
 
   @Override
   public ReleaseResponse aorResourceRelease(ReleaseRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    ReleaseResponse out = new ReleaseResponse();
+    out.setSuccessful(true);
+    out.setError("Release generic resource");
+    return out;
   }
 
   @Override
   public StatusResponse aorResourceStatus(StatusRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    StatusResponse out = new StatusResponse();
+    out.setSuccessful(true);
+    out.setError("Status generic resource");
+    return out;
   }
 
   @Override
   public ProgramResponse aorResourceProgram(ProgramRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    ProgramResponse out = new ProgramResponse();
+    out.setSuccessful(true);
+    out.setError("Program generic resource");
+    return out;
   }
 
   @Override
   public InitResponse aorResourceInit(InitRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    InitResponse out = new InitResponse();
+    out.setSuccessful(true);
+    out.setError("Init generic resource");
+    return out;
   }
 
   @Override
   public SaveImageResponse aorResourceSaveImage(SaveImageRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    SaveImageResponse out = new SaveImageResponse();
+    out.setSuccessful(true);
+    out.setError("Save image generic resource");
+    return out;
   }
 
   @Override
   public GetImageResponse aorResourceGetImage(GetImageRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    GetImageResponse out = new GetImageResponse();
+    out.setSuccessful(true);
+    out.setError("Get image generic resource");
+    return out;
   }
 
   @Override
   public ResetResponse aorResourceReset(ResetRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    ResetResponse out = new ResetResponse();
+    out.setSuccessful(true);
+    out.setError("Reset generic resource");
+    return out;
   }
 
   @Override
   public SetParamResponse aorResourceSetParam(SetParamRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    SetParamResponse out = new SetParamResponse();
+    out.setSuccessful(true);
+    out.setError("Set param generic resource");
+    return out;
   }
 
   @Override
   public GetParamResponse aorResourceGetParam(GetParamRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    GetParamResponse out = new GetParamResponse();
+    out.setSuccessful(true);
+    out.setError("Get param generic resource");
+    return out;
   }
 
   @Override
   public AddVlanResponse aorResourceAddVlan(AddVlanRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    AddVlanResponse out = new AddVlanResponse();
+    out.setSuccessful(true);
+    out.setError("Add Vlan generic resource");
+    return out;
   }
 
   @Override
   public RemoveVlanResponse aorResourceRemoveVlan(RemoveVlanRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    RemoveVlanResponse out = new RemoveVlanResponse();
+    out.setSuccessful(true);
+    out.setError("Remove Vlan generic resource");
+    return out;
   }
 
   @Override
   public RebootResponse aorResourceReboot(RebootRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    RebootResponse out = new RebootResponse();
+    out.setSuccessful(true);
+    out.setError("Reboot generic resource");
+    return out;
   }
 
   @Override
   public TerminateResponse aorResourceTerminate(TerminateRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    TerminateResponse out = new TerminateResponse();
+    out.setSuccessful(true);
+    out.setError("Terminate generic resource");
+    return out;
   }
 
   @Override
   public ListResponse aorResourceList(ListRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    ListResponse listOut = new ListResponse();
+    listOut.setSuccessful(true);
+    listOut.setError("List generic resource");
+    return listOut;
   }
 
   @Override
   public GenericOperationResponse aorResourceGenericOperation(
       GenericOperationRequest inputPart) {
-    // TODO Auto-generated method stub
-    return null;
+    GenericOperationResponse out = new GenericOperationResponse();
+    out.setXmlString("<xml></xml>");
+    return out;
   }
 }

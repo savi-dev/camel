@@ -4,19 +4,19 @@ package ca.savi.camel.server;
 import java.io.IOException;
 
 import ca.savi.camel.service.AORResourceService;
-import ca.savi.camel.service.example.Multiply;
 import ca.savi.front.FrontServer;
 
 /**
-* Runs the front server for cheeta.
+* Runs the front server for camel.
 *
-* @author Soheil Hassas Yeganeh <soheil@cs.toronto.edu>
+* @author Eliot J. Kang <eliot@savinetwork.ca>
+* @version 0.3
 */
 
 public class CamelServer {
   public static void main(String[] args) throws IOException {
    FrontServer f = new FrontServer("0.0.0.0", 9876, false);
-   f.register(Multiply.class, AORResourceService.class);
+   f.register(AORResourceService.class);
    f.start();
   }
 }
