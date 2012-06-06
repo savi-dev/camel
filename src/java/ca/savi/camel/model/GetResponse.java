@@ -1,3 +1,4 @@
+// Copyright (C) 2012, The SAVI Project.
 package ca.savi.camel.model;
 
 import java.util.ArrayList;
@@ -11,23 +12,8 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * Java class for anonymous complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- *
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="uuidList" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="successful" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="xmlString" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * @author Eliot J. Kang <eliot@savinetwork.ca>
+ * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = { "uuidList", "successful", "error",

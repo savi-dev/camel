@@ -6,7 +6,6 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
-import javax.xml.bind.annotation.XmlSeeAlso;
 
 import ca.savi.camel.model.AddVlanRequest;
 import ca.savi.camel.model.AddVlanResponse;
@@ -22,7 +21,6 @@ import ca.savi.camel.model.InitRequest;
 import ca.savi.camel.model.InitResponse;
 import ca.savi.camel.model.ListRequest;
 import ca.savi.camel.model.ListResponse;
-import ca.savi.camel.model.ObjectFactory;
 import ca.savi.camel.model.ProgramRequest;
 import ca.savi.camel.model.ProgramResponse;
 import ca.savi.camel.model.RebootRequest;
@@ -43,27 +41,26 @@ import ca.savi.camel.model.TerminateRequest;
 import ca.savi.camel.model.TerminateResponse;
 
 /**
- * Processing resource port.
+ * node resource port.
  * @author Eliot J. Kang <eliot@savinetwork.ca>
  * @version 0.1
  */
 @WebService(
-    name = "AORResourceService",
-    targetNamespace = "http://camel.savi.ca/wsdl/AORResource")
+    name = "NodeResourceService",
+    targetNamespace = "http://camel.savi.ca/wsdl/NodeResource")
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
-@XmlSeeAlso({ ObjectFactory.class })
-public interface AORResourcePortType {
+public interface NodeResourcePortType {
   /**
    * Get a resource.
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.GetResponse
    */
-  @WebMethod(operationName = "AORResourceGet")
+  @WebMethod(operationName = "NodeResourceGet")
   @WebResult(name = "getResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public GetResponse aorResourceGet(@WebParam(name = "getRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public GetResponse nodeResourceGet(@WebParam(name = "getRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") GetRequest inputPart);
 
   /**
@@ -71,12 +68,12 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.ReleaseResponse
    */
-  @WebMethod(operationName = "AORResourceRelease")
+  @WebMethod(operationName = "NodeResourceRelease")
   @WebResult(name = "releaseResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public ReleaseResponse aorResourceRelease(@WebParam(name = "releaseRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public ReleaseResponse nodeResourceRelease(@WebParam(name = "releaseRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") ReleaseRequest inputPart);
 
   /**
@@ -84,12 +81,12 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.StatusResponse
    */
-  @WebMethod(operationName = "AORResourceStatus")
+  @WebMethod(operationName = "NodeResourceStatus")
   @WebResult(name = "statusResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public StatusResponse aorResourceStatus(@WebParam(name = "statusRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public StatusResponse nodeResourceStatus(@WebParam(name = "statusRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") StatusRequest inputPart);
 
   /**
@@ -97,12 +94,12 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.ProgramResponse
    */
-  @WebMethod(operationName = "AORResourceProgram")
+  @WebMethod(operationName = "NodeResourceProgram")
   @WebResult(name = "programResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public ProgramResponse aorResourceProgram(@WebParam(name = "programRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public ProgramResponse nodeResourceProgram(@WebParam(name = "programRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") ProgramRequest inputPart);
 
   /**
@@ -110,12 +107,12 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.InitResponse
    */
-  @WebMethod(operationName = "AORResourceInit")
+  @WebMethod(operationName = "NodeResourceInit")
   @WebResult(name = "initResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public InitResponse aorResourceInit(@WebParam(name = "initRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public InitResponse nodeResourceInit(@WebParam(name = "initRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") InitRequest inputPart);
 
   /**
@@ -123,13 +120,13 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.SaveImageResponse
    */
-  @WebMethod(operationName = "AORResourceSaveImage")
+  @WebMethod(operationName = "NodeResourceSaveImage")
   @WebResult(name = "saveImageResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public SaveImageResponse aorResourceSaveImage(@WebParam(
+  public SaveImageResponse nodeResourceSaveImage(@WebParam(
       name = "saveImageRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") SaveImageRequest inputPart);
 
   /**
@@ -137,13 +134,13 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.GetImageResponse
    */
-  @WebMethod(operationName = "AORResourceGetImage")
+  @WebMethod(operationName = "NodeResourceGetImage")
   @WebResult(name = "getImageResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public GetImageResponse aorResourceGetImage(@WebParam(
+  public GetImageResponse nodeResourceGetImage(@WebParam(
       name = "getImageRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") GetImageRequest inputPart);
 
   /**
@@ -151,12 +148,12 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.ResetResponse
    */
-  @WebMethod(operationName = "AORResourceReset")
+  @WebMethod(operationName = "NodeResourceReset")
   @WebResult(name = "resetResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public ResetResponse aorResourceReset(@WebParam(name = "resetRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public ResetResponse nodeResourceReset(@WebParam(name = "resetRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") ResetRequest inputPart);
 
   /**
@@ -164,13 +161,13 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.SetParamResponse
    */
-  @WebMethod(operationName = "AORResourceSetParam")
+  @WebMethod(operationName = "NodeResourceSetParam")
   @WebResult(name = "setParamResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public SetParamResponse aorResourceSetParam(@WebParam(
+  public SetParamResponse nodeResourceSetParam(@WebParam(
       name = "setParamRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") SetParamRequest inputPart);
 
   /**
@@ -178,87 +175,87 @@ public interface AORResourcePortType {
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.GetParamResponse
    */
-  @WebMethod(operationName = "AORResourceGetParam")
+  @WebMethod(operationName = "NodeResourceGetParam")
   @WebResult(name = "getParamResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public GetParamResponse aorResourceGetParam(@WebParam(
+  public GetParamResponse nodeResourceGetParam(@WebParam(
       name = "getParamRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") GetParamRequest inputPart);
 
   /**
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.AddVlanResponse
    */
-  @WebMethod(operationName = "AORResourceAddVlan")
+  @WebMethod(operationName = "NodeResourceAddVlan")
   @WebResult(name = "addVlanResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public AddVlanResponse aorResourceAddVlan(@WebParam(name = "addVlanRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public AddVlanResponse nodeResourceAddVlan(@WebParam(name = "addVlanRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") AddVlanRequest inputPart);
 
   /**
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.RemoveVlanResponse
    */
-  @WebMethod(operationName = "AORResourceRemoveVlan")
+  @WebMethod(operationName = "NodeResourceRemoveVlan")
   @WebResult(name = "removeVlanResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public RemoveVlanResponse aorResourceRemoveVlan(@WebParam(
+  public RemoveVlanResponse nodeResourceRemoveVlan(@WebParam(
       name = "removeVlanRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") RemoveVlanRequest inputPart);
 
   /**
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.RebootResponse
    */
-  @WebMethod(operationName = "AORResourceReboot")
+  @WebMethod(operationName = "NodeResourceReboot")
   @WebResult(name = "rebootResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public RebootResponse aorResourceReboot(@WebParam(name = "rebootRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public RebootResponse nodeResourceReboot(@WebParam(name = "rebootRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") RebootRequest inputPart);
 
   /**
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.TerminateResponse
    */
-  @WebMethod(operationName = "AORResourceTerminate")
+  @WebMethod(operationName = "NodeResourceTerminate")
   @WebResult(name = "terminateResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public TerminateResponse aorResourceTerminate(@WebParam(
+  public TerminateResponse nodeResourceTerminate(@WebParam(
       name = "terminateRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") TerminateRequest inputPart);
 
   /**
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.ListResponse
    */
-  @WebMethod(operationName = "AORResourceList")
+  @WebMethod(operationName = "NodeResourceList")
   @WebResult(name = "listResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public ListResponse aorResourceList(@WebParam(name = "listRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+  public ListResponse nodeResourceList(@WebParam(name = "listRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") ListRequest inputPart);
 
   /**
    * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.GenericOperationResponse
    */
-  @WebMethod(operationName = "AORResourceGenericOperation")
+  @WebMethod(operationName = "NodeResourceGenericOperation")
   @WebResult(name = "genericOperationResponse",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "OutputPart")
-  public GenericOperationResponse aorResourceGenericOperation(@WebParam(
+  public GenericOperationResponse nodeResourceGenericOperation(@WebParam(
       name = "genericOperationRequest",
-      targetNamespace = "http://camel.savi.ca/model/AORResourceSchema",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") GenericOperationRequest inputPart);
 }

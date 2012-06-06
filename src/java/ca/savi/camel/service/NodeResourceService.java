@@ -43,13 +43,13 @@ import ca.savi.camel.model.TerminateResponse;
  * @version
  */
 @WebService(
-    serviceName = "AORResourceService",
-    portName = "AORResourcePortTypeBindingPort",
-    endpointInterface = "ca.savi.camel.service.AORResourcePortType",
-    targetNamespace = "http://camel.savi.ca/AORResource")
-public class AORResourceService implements AORResourcePortType {
+    serviceName = "NodeResourceService",
+    portName = "NodeResourcePortTypeBindingPort",
+    endpointInterface = "ca.savi.camel.service.NodeResourcePortType",
+    targetNamespace = "http://camel.savi.ca/NodeResource")
+public class NodeResourceService implements NodeResourcePortType {
   @Override
-  public GetResponse aorResourceGet(GetRequest inputPart) {
+  public GetResponse nodeResourceGet(GetRequest inputPart) {
     GetResponse out = new GetResponse();
     out.setSuccessful(true);
     out.setError("Get generic resource");
@@ -57,7 +57,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public ReleaseResponse aorResourceRelease(ReleaseRequest inputPart) {
+  public ReleaseResponse nodeResourceRelease(ReleaseRequest inputPart) {
     ReleaseResponse out = new ReleaseResponse();
     out.setSuccessful(true);
     out.setError("Release generic resource");
@@ -65,7 +65,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public StatusResponse aorResourceStatus(StatusRequest inputPart) {
+  public StatusResponse nodeResourceStatus(StatusRequest inputPart) {
     StatusResponse out = new StatusResponse();
     out.setSuccessful(true);
     out.setError("Status generic resource");
@@ -73,7 +73,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public ProgramResponse aorResourceProgram(ProgramRequest inputPart) {
+  public ProgramResponse nodeResourceProgram(ProgramRequest inputPart) {
     ProgramResponse out = new ProgramResponse();
     out.setSuccessful(true);
     out.setError("Program generic resource");
@@ -81,7 +81,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public InitResponse aorResourceInit(InitRequest inputPart) {
+  public InitResponse nodeResourceInit(InitRequest inputPart) {
     InitResponse out = new InitResponse();
     out.setSuccessful(true);
     out.setError("Init generic resource");
@@ -89,7 +89,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public SaveImageResponse aorResourceSaveImage(SaveImageRequest inputPart) {
+  public SaveImageResponse nodeResourceSaveImage(SaveImageRequest inputPart) {
     SaveImageResponse out = new SaveImageResponse();
     out.setSuccessful(true);
     out.setError("Save image generic resource");
@@ -97,7 +97,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public GetImageResponse aorResourceGetImage(GetImageRequest inputPart) {
+  public GetImageResponse nodeResourceGetImage(GetImageRequest inputPart) {
     GetImageResponse out = new GetImageResponse();
     out.setSuccessful(true);
     out.setError("Get image generic resource");
@@ -105,7 +105,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public ResetResponse aorResourceReset(ResetRequest inputPart) {
+  public ResetResponse nodeResourceReset(ResetRequest inputPart) {
     ResetResponse out = new ResetResponse();
     out.setSuccessful(true);
     out.setError("Reset generic resource");
@@ -113,7 +113,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public SetParamResponse aorResourceSetParam(SetParamRequest inputPart) {
+  public SetParamResponse nodeResourceSetParam(SetParamRequest inputPart) {
     SetParamResponse out = new SetParamResponse();
     out.setSuccessful(true);
     out.setError("Set param generic resource");
@@ -121,7 +121,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public GetParamResponse aorResourceGetParam(GetParamRequest inputPart) {
+  public GetParamResponse nodeResourceGetParam(GetParamRequest inputPart) {
     GetParamResponse out = new GetParamResponse();
     out.setSuccessful(true);
     out.setError("Get param generic resource");
@@ -129,7 +129,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public AddVlanResponse aorResourceAddVlan(AddVlanRequest inputPart) {
+  public AddVlanResponse nodeResourceAddVlan(AddVlanRequest inputPart) {
     AddVlanResponse out = new AddVlanResponse();
     out.setSuccessful(true);
     out.setError("Add Vlan generic resource");
@@ -137,7 +137,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public RemoveVlanResponse aorResourceRemoveVlan(RemoveVlanRequest inputPart) {
+  public RemoveVlanResponse nodeResourceRemoveVlan(RemoveVlanRequest inputPart) {
     RemoveVlanResponse out = new RemoveVlanResponse();
     out.setSuccessful(true);
     out.setError("Remove Vlan generic resource");
@@ -145,7 +145,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public RebootResponse aorResourceReboot(RebootRequest inputPart) {
+  public RebootResponse nodeResourceReboot(RebootRequest inputPart) {
     RebootResponse out = new RebootResponse();
     out.setSuccessful(true);
     out.setError("Reboot generic resource");
@@ -153,7 +153,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public TerminateResponse aorResourceTerminate(TerminateRequest inputPart) {
+  public TerminateResponse nodeResourceTerminate(TerminateRequest inputPart) {
     TerminateResponse out = new TerminateResponse();
     out.setSuccessful(true);
     out.setError("Terminate generic resource");
@@ -161,7 +161,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public ListResponse aorResourceList(ListRequest inputPart) {
+  public ListResponse nodeResourceList(ListRequest inputPart) {
     ListResponse listOut = new ListResponse();
     listOut.setSuccessful(true);
     listOut.setError("List generic resource");
@@ -169,7 +169,7 @@ public class AORResourceService implements AORResourcePortType {
   }
 
   @Override
-  public GenericOperationResponse aorResourceGenericOperation(
+  public GenericOperationResponse nodeResourceGenericOperation(
       GenericOperationRequest inputPart) {
     GenericOperationResponse out = new GenericOperationResponse();
     out.setXmlString("<xml></xml>");
