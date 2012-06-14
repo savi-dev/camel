@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "successful", "error", "xmlString" })
-@XmlRootElement(name = "addVlanResponse")
-public class AddVlanResponse {
+@XmlType(name = "", propOrder = { "xmlString" })
+@XmlRootElement(name = "connectToNetworkResponse")
+public class ConnectToNetworkResponse {
   protected boolean successful;
   protected String error;
   protected String xmlString;

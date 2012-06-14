@@ -3,7 +3,6 @@ package ca.savi.camel.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -15,11 +14,10 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "successful", "error", "xmlString" })
-@XmlRootElement(name = "removeVlanResponse")
-public class RemoveVlanResponse {
+@XmlType(name = "", propOrder = { "xmlString" })
+@XmlRootElement(name = "disconnectFromNetworkResponse")
+public class DisconnectFromNetworkResponse {
   protected boolean successful;
-  @XmlElement(required = true)
   protected String error;
   protected String xmlString;
 

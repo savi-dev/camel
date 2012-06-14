@@ -10,21 +10,22 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>
- * Java class for anonymous complex type.
+ * ConnectToNetwork request class.
  * <p>
  * @author Eliot J. Kang <eliot@savinetwork.ca>
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "qinqTag", "uuid",
-    "xmlString" })
-@XmlRootElement(name = "addVlanRequest")
-public class AddVlanRequest {
+@XmlType(name = "", propOrder = { "authentication", "uuid",
+    "resourcePort", "networkUuid", "xmlString" })
+@XmlRootElement(name = "connectToNetworkRequest")
+public class ConnectToNetworkRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
-  @XmlSchemaType(name = "unsignedInt")
-  protected long qinqTag;
   protected String uuid;
+  @XmlSchemaType(name = "unsignedInt")
+  protected int port;
+  protected String networkUuid;
   protected String xmlString;
 
   /**
@@ -39,27 +40,12 @@ public class AddVlanRequest {
    * Sets the value of the authentication property.
    * @param value allowed object is {@link SecurityObject }
    */
-  public void setAuthentication(SecurityObject value) {
-    this.authentication = value;
-  }
-
-  /**
-   * Gets the value of the qinqTag property.
-   */
-  public long getQinqTag() {
-    return qinqTag;
-  }
-
-  /**
-   * Sets the value of the qinqTag property.
-   */
-  public void setQinqTag(long value) {
-    this.qinqTag = value;
+  public void setAuthentication(SecurityObject authentication) {
+    this.authentication = authentication;
   }
 
   /**
    * Gets the value of the uuid property.
-   * @return possible object is {@link String }
    */
   public String getUuid() {
     return uuid;
@@ -67,15 +53,41 @@ public class AddVlanRequest {
 
   /**
    * Sets the value of the uuid property.
-   * @param value allowed object is {@link String }
    */
-  public void setUuid(String value) {
-    this.uuid = value;
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
+  }
+
+  /**
+   * Gets the value of the port property.
+   */
+  public int getPort() {
+    return port;
+  }
+
+  /**
+   * Sets the value of the port property.
+   */
+  public void setPort(int port) {
+    this.port = port;
+  }
+
+  /**
+   * Gets the value of the networkUuid property.
+   */
+  public String getNetworkUuid() {
+    return networkUuid;
+  }
+
+  /**
+   * Sets the value of the networkUuid property.
+   */
+  public void setNetworkUuid(String networkUuid) {
+    this.networkUuid = networkUuid;
   }
 
   /**
    * Gets the value of the xmlString property.
-   * @return possible object is {@link String }
    */
   public String getXmlString() {
     return xmlString;
@@ -83,9 +95,8 @@ public class AddVlanRequest {
 
   /**
    * Sets the value of the xmlString property.
-   * @param value allowed object is {@link String }
    */
-  public void setXmlString(String value) {
-    this.xmlString = value;
+  public void setXmlString(String xmlString) {
+    this.xmlString = xmlString;
   }
 }

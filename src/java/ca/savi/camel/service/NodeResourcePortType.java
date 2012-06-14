@@ -7,8 +7,10 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
-import ca.savi.camel.model.AddVlanRequest;
-import ca.savi.camel.model.AddVlanResponse;
+import ca.savi.camel.model.ConnectToNetworkRequest;
+import ca.savi.camel.model.ConnectToNetworkResponse;
+import ca.savi.camel.model.DisconnectFromNetworkRequest;
+import ca.savi.camel.model.DisconnectFromNetworkResponse;
 import ca.savi.camel.model.GenericOperationRequest;
 import ca.savi.camel.model.GenericOperationResponse;
 import ca.savi.camel.model.GetImageRequest;
@@ -27,8 +29,6 @@ import ca.savi.camel.model.RebootRequest;
 import ca.savi.camel.model.RebootResponse;
 import ca.savi.camel.model.ReleaseRequest;
 import ca.savi.camel.model.ReleaseResponse;
-import ca.savi.camel.model.RemoveVlanRequest;
-import ca.savi.camel.model.RemoveVlanResponse;
 import ca.savi.camel.model.ResetRequest;
 import ca.savi.camel.model.ResetResponse;
 import ca.savi.camel.model.SaveImageRequest;
@@ -186,31 +186,6 @@ public interface NodeResourcePortType {
 
   /**
    * @param inputPart
-   * @return returns ca.savi.ws.resourcemanager.AddVlanResponse
-   */
-  @WebMethod(operationName = "NodeResourceAddVlan")
-  @WebResult(name = "addVlanResponse",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "OutputPart")
-  public AddVlanResponse nodeResourceAddVlan(@WebParam(name = "addVlanRequest",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "InputPart") AddVlanRequest inputPart);
-
-  /**
-   * @param inputPart
-   * @return returns ca.savi.ws.resourcemanager.RemoveVlanResponse
-   */
-  @WebMethod(operationName = "NodeResourceRemoveVlan")
-  @WebResult(name = "removeVlanResponse",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "OutputPart")
-  public RemoveVlanResponse nodeResourceRemoveVlan(@WebParam(
-      name = "removeVlanRequest",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "InputPart") RemoveVlanRequest inputPart);
-
-  /**
-   * @param inputPart
    * @return returns ca.savi.ws.resourcemanager.RebootResponse
    */
   @WebMethod(operationName = "NodeResourceReboot")
@@ -258,4 +233,30 @@ public interface NodeResourcePortType {
       name = "genericOperationRequest",
       targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") GenericOperationRequest inputPart);
+
+  /**
+   * @param inputPart
+   * @return returns ca.savi.ws.resourcemanager.ConnectToNetworkResponse
+   */
+  @WebMethod(operationName = "NodeResourceConnectToNetwork")
+  @WebResult(name = "connectToNetworkResponse",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
+      partName = "OutputPart")
+  public ConnectToNetworkResponse nodeResourceConnectToNetwork(@WebParam(
+      name = "connectToNetworkRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
+      partName = "InputPart") ConnectToNetworkRequest inputPart);
+
+  /**
+   * @param inputPart
+   * @return returns ca.savi.ws.resourcemanager.DisconnectFromNetworkResponse
+   */
+  @WebMethod(operationName = "NodeResourceDisconnectFromNetwork")
+  @WebResult(name = "disconnectFromNetworkResponse",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
+      partName = "OutputPart")
+  public DisconnectFromNetworkResponse nodeResourceDisconnectFromNetwork(
+      @WebParam(name = "disconnectFromNetworkRequest",
+      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
+      partName = "InputPart") DisconnectFromNetworkRequest inputPart);
 }

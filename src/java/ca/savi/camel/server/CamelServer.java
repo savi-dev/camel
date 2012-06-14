@@ -15,7 +15,7 @@ import ca.savi.front.FrontServer;
 
 public class CamelServer {
   public static void main(String[] args) throws IOException {
-   FrontServer f = new FrontServer("0.0.0.0", 9876, false);
+   FrontServer f = new FrontServer("0.0.0.0", 9090, false);
    f.register(NodeResourceService.class);
    f.start();
   }

@@ -2,10 +2,11 @@
 package ca.savi.camel.service;
 
 import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
 
-import ca.savi.camel.model.AddVlanRequest;
-import ca.savi.camel.model.AddVlanResponse;
+import ca.savi.camel.model.ConnectToNetworkRequest;
+import ca.savi.camel.model.ConnectToNetworkResponse;
+import ca.savi.camel.model.DisconnectFromNetworkRequest;
+import ca.savi.camel.model.DisconnectFromNetworkResponse;
 import ca.savi.camel.model.GenericOperationRequest;
 import ca.savi.camel.model.GenericOperationResponse;
 import ca.savi.camel.model.GetImageRequest;
@@ -24,8 +25,6 @@ import ca.savi.camel.model.RebootRequest;
 import ca.savi.camel.model.RebootResponse;
 import ca.savi.camel.model.ReleaseRequest;
 import ca.savi.camel.model.ReleaseResponse;
-import ca.savi.camel.model.RemoveVlanRequest;
-import ca.savi.camel.model.RemoveVlanResponse;
 import ca.savi.camel.model.ResetRequest;
 import ca.savi.camel.model.ResetResponse;
 import ca.savi.camel.model.SaveImageRequest;
@@ -129,22 +128,6 @@ public class NodeResourceService implements NodeResourcePortType {
   }
 
   @Override
-  public AddVlanResponse nodeResourceAddVlan(AddVlanRequest inputPart) {
-    AddVlanResponse out = new AddVlanResponse();
-    out.setSuccessful(true);
-    out.setError("Add Vlan generic resource");
-    return out;
-  }
-
-  @Override
-  public RemoveVlanResponse nodeResourceRemoveVlan(RemoveVlanRequest inputPart) {
-    RemoveVlanResponse out = new RemoveVlanResponse();
-    out.setSuccessful(true);
-    out.setError("Remove Vlan generic resource");
-    return out;
-  }
-
-  @Override
   public RebootResponse nodeResourceReboot(RebootRequest inputPart) {
     RebootResponse out = new RebootResponse();
     out.setSuccessful(true);
@@ -172,6 +155,22 @@ public class NodeResourceService implements NodeResourcePortType {
   public GenericOperationResponse nodeResourceGenericOperation(
       GenericOperationRequest inputPart) {
     GenericOperationResponse out = new GenericOperationResponse();
+    out.setXmlString("<xml></xml>");
+    return out;
+  }
+
+  @Override
+  public ConnectToNetworkResponse nodeResourceConnectToNetwork(
+      ConnectToNetworkRequest inputPart) {
+    ConnectToNetworkResponse out = new ConnectToNetworkResponse();
+    out.setXmlString("<xml></xml>");
+    return out;
+  }
+
+  @Override
+  public DisconnectFromNetworkResponse nodeResourceDisconnectFromNetwork(
+      DisconnectFromNetworkRequest inputPart) {
+    DisconnectFromNetworkResponse out = new DisconnectFromNetworkResponse();
     out.setXmlString("<xml></xml>");
     return out;
   }
