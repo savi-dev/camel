@@ -7,10 +7,6 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
-import ca.savi.camel.model.ConnectToNetworkRequest;
-import ca.savi.camel.model.ConnectToNetworkResponse;
-import ca.savi.camel.model.DisconnectFromNetworkRequest;
-import ca.savi.camel.model.DisconnectFromNetworkResponse;
 import ca.savi.camel.model.GenericOperationRequest;
 import ca.savi.camel.model.GenericOperationResponse;
 import ca.savi.camel.model.GetImageRequest;
