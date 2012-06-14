@@ -14,12 +14,28 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "xmlString" })
+@XmlType(name = "", propOrder = { "networkPort", "successful", "error",
+    "xmlString" })
 @XmlRootElement(name = "connectToNetworkResponse")
 public class ConnectToNetworkResponse {
+  protected int networkPort;
   protected boolean successful;
   protected String error;
   protected String xmlString;
+
+  /**
+   * Gets the value of the networkPort property.
+   */
+  public int getNetworkPort() {
+    return networkPort;
+  }
+
+  /**
+   * Sets the value of the networkPort property.
+   */
+  public void setNetworkPort(int networkPort) {
+    this.networkPort = networkPort;
+  }
 
   /**
    * Gets the value of the successful property.
