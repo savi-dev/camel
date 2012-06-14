@@ -233,30 +233,4 @@ public interface NodeResourcePortType {
       name = "genericOperationRequest",
       targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
       partName = "InputPart") GenericOperationRequest inputPart);
-
-  /**
-   * @param inputPart
-   * @return returns ca.savi.ws.resourcemanager.ConnectToNetworkResponse
-   */
-  @WebMethod(operationName = "NodeResourceConnectToNetwork")
-  @WebResult(name = "connectToNetworkResponse",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "OutputPart")
-  public ConnectToNetworkResponse nodeResourceConnectToNetwork(@WebParam(
-      name = "connectToNetworkRequest",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "InputPart") ConnectToNetworkRequest inputPart);
-
-  /**
-   * @param inputPart
-   * @return returns ca.savi.ws.resourcemanager.DisconnectFromNetworkResponse
-   */
-  @WebMethod(operationName = "NodeResourceDisconnectFromNetwork")
-  @WebResult(name = "disconnectFromNetworkResponse",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "OutputPart")
-  public DisconnectFromNetworkResponse nodeResourceDisconnectFromNetwork(
-      @WebParam(name = "disconnectFromNetworkRequest",
-      targetNamespace = "http://camel.savi.ca/model/NodeResourceSchema",
-      partName = "InputPart") DisconnectFromNetworkRequest inputPart);
 }

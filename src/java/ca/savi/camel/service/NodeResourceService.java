@@ -3,10 +3,6 @@ package ca.savi.camel.service;
 
 import javax.jws.WebService;
 
-import ca.savi.camel.model.ConnectToNetworkRequest;
-import ca.savi.camel.model.ConnectToNetworkResponse;
-import ca.savi.camel.model.DisconnectFromNetworkRequest;
-import ca.savi.camel.model.DisconnectFromNetworkResponse;
 import ca.savi.camel.model.GenericOperationRequest;
 import ca.savi.camel.model.GenericOperationResponse;
 import ca.savi.camel.model.GetImageRequest;
@@ -41,12 +37,12 @@ import ca.savi.camel.model.TerminateResponse;
  * @author Eliot J. Kang <eliot@savinetwork.ca>
  * @version
  */
-@WebService(
-    serviceName = "NodeResourceService",
+@WebService(serviceName = "NodeResourceService",
     portName = "NodeResourcePortTypeBindingPort",
     endpointInterface = "ca.savi.camel.service.NodeResourcePortType",
     targetNamespace = "http://camel.savi.ca/NodeResource")
-public class NodeResourceService implements NodeResourcePortType {
+public class NodeResourceService
+    implements NodeResourcePortType {
   @Override
   public GetResponse nodeResourceGet(GetRequest inputPart) {
     GetResponse out = new GetResponse();
@@ -155,22 +151,6 @@ public class NodeResourceService implements NodeResourcePortType {
   public GenericOperationResponse nodeResourceGenericOperation(
       GenericOperationRequest inputPart) {
     GenericOperationResponse out = new GenericOperationResponse();
-    out.setXmlString("<xml></xml>");
-    return out;
-  }
-
-  @Override
-  public ConnectToNetworkResponse nodeResourceConnectToNetwork(
-      ConnectToNetworkRequest inputPart) {
-    ConnectToNetworkResponse out = new ConnectToNetworkResponse();
-    out.setXmlString("<xml></xml>");
-    return out;
-  }
-
-  @Override
-  public DisconnectFromNetworkResponse nodeResourceDisconnectFromNetwork(
-      DisconnectFromNetworkRequest inputPart) {
-    DisconnectFromNetworkResponse out = new DisconnectFromNetworkResponse();
     out.setXmlString("<xml></xml>");
     return out;
   }
