@@ -14,11 +14,13 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "successful", "error", "xmlString" })
+@XmlType(name = "", propOrder = { "successful", "error", "imageUuid",
+    "xmlString" })
 @XmlRootElement(name = "saveImageResponse")
 public class SaveImageResponse {
   protected boolean successful;
   protected String error;
+  protected String imageUuid;
   protected String xmlString;
 
   /**
@@ -65,5 +67,21 @@ public class SaveImageResponse {
    */
   public void setXmlString(String value) {
     this.xmlString = value;
+  }
+
+  /**
+   * Gets the value of the imageUuid property.
+   * @return possible object is {@link String }
+   */
+  public String getImageUuid() {
+    return imageUuid;
+  }
+
+  /**
+   * Sets the value of the imageUuid property.
+   * @param value allowed object is {@link String }
+   */
+  public void setImageUuid(String imageUuid) {
+    this.imageUuid = imageUuid;
   }
 }

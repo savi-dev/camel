@@ -15,15 +15,15 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "uuid", "xmlString",
-    "storageHttpTuple" })
+@XmlType(name = "", propOrder = { "authentication", "uuid", "serviceEndPoint", 
+    "xmlString" })
 @XmlRootElement(name = "programRequest")
 public class ProgramRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
   protected String uuid;
+  protected String serviceEndpoint;
   protected String xmlString;
-  protected StorageHttpTuple storageHttpTuple;
 
   /**
    * Gets the value of the authentication property.
@@ -74,18 +74,18 @@ public class ProgramRequest {
   }
 
   /**
-   * Gets the value of the storageHttpTuple property.
+   * Gets the value of the serviceEndpoint property.
    * @return possible object is {@link StorageHttpTuple }
    */
-  public StorageHttpTuple getStorageHttpTuple() {
-    return storageHttpTuple;
+  public String getServiceEndpoint() {
+    return serviceEndpoint;
   }
 
   /**
-   * Sets the value of the storageHttpTuple property.
-   * @param value allowed object is {@link StorageHttpTuple }
+   * Gets the value of the serviceEndpoint property.
+   * @return possible object is {@link StorageHttpTuple }
    */
-  public void setStorageHttpTuple(StorageHttpTuple value) {
-    this.storageHttpTuple = value;
+  public void setServiceEndpoint(String serviceEndpoint) {
+    this.serviceEndpoint = serviceEndpoint;
   }
 }

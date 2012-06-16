@@ -15,12 +15,14 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "uuid", "xmlString" })
+@XmlType(name = "", propOrder = { "authentication", "serviceEndpoint",
+    "xmlString" })
 @XmlRootElement(name = "saveImageRequest")
 public class SaveImageRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
-  protected String uuid;
+  @XmlElement(required = true)
+  protected String serviceEndpoint;
   protected String xmlString;
 
   /**
@@ -40,19 +42,19 @@ public class SaveImageRequest {
   }
 
   /**
-   * Gets the value of the uuid property.
+   * Gets the value of the serviceEndpoint property.
    * @return possible object is {@link String }
    */
-  public String getUuid() {
-    return uuid;
+  public String getServiceEndpoint() {
+    return serviceEndpoint;
   }
 
   /**
-   * Sets the value of the uuid property.
+   * Sets the value of the serviceEndpoint property.
    * @param value allowed object is {@link String }
    */
-  public void setUuid(String value) {
-    this.uuid = value;
+  public void setServiceEndpoint(String value) {
+    this.serviceEndpoint = value;
   }
 
   /**
