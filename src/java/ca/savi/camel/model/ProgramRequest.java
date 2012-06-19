@@ -15,13 +15,14 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "uuid", "serviceEndPoint", 
-    "xmlString" })
+@XmlType(name = "", propOrder = { "authentication", "uuid", "imageUuid",
+    "serviceEndPoint", "xmlString" })
 @XmlRootElement(name = "programRequest")
 public class ProgramRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
   protected String uuid;
+  protected String imageUuid;
   protected String serviceEndpoint;
   protected String xmlString;
 
@@ -58,6 +59,22 @@ public class ProgramRequest {
   }
 
   /**
+   * Gets the value of the imageUuid property.
+   * @return possible object is {@link String }
+   */
+  public String getImageUuid() {
+    return imageUuid;
+  }
+
+  /**
+   * Sets the value of the imageUuid property.
+   * @param value allowed object is {@link String }
+   */
+  public void setImageUuid(String value) {
+    this.imageUuid = value;
+  }
+
+  /**
    * Gets the value of the xmlString property.
    * @return possible object is {@link String }
    */
@@ -75,7 +92,7 @@ public class ProgramRequest {
 
   /**
    * Gets the value of the serviceEndpoint property.
-   * @return possible object is {@link StorageHttpTuple }
+   * @return possible object is {@link String }
    */
   public String getServiceEndpoint() {
     return serviceEndpoint;
@@ -83,7 +100,7 @@ public class ProgramRequest {
 
   /**
    * Gets the value of the serviceEndpoint property.
-   * @return possible object is {@link StorageHttpTuple }
+   * @return possible object is {@link String }
    */
   public void setServiceEndpoint(String serviceEndpoint) {
     this.serviceEndpoint = serviceEndpoint;
