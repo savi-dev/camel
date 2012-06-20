@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = { "authentication", "uuid", "imageUuid",
-    "serviceEndPoint", "xmlString" })
+    "serviceEndpoint", "xmlString" })
 @XmlRootElement(name = "programRequest")
 public class ProgramRequest {
   @XmlElement(required = true)
