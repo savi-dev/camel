@@ -17,12 +17,14 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "duration", "xmlString",
-    "qinqTag" })
+@XmlType(name = "", propOrder = { "authentication", "resourceType",
+    "duration", "xmlString", "qinqTag" })
 @XmlRootElement(name = "getRequest")
 public class GetRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
+  @XmlElement(required = true)
+  protected String resourceType;
   @XmlSchemaType(name = "unsignedLong")
   protected BigInteger duration;
   protected String xmlString;
@@ -89,5 +91,19 @@ public class GetRequest {
    */
   public void setQinqTag(long value) {
     this.qinqTag = value;
+  }
+
+  /**
+   * Gets the value of the resourceType property.
+   */
+  public String getResourceType() {
+    return resourceType;
+  }
+
+  /**
+   * Sets the value of the resourceType property.
+   */
+  public void setResourceType(String resourceType) {
+    this.resourceType = resourceType;
   }
 }
