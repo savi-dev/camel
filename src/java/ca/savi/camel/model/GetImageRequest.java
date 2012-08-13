@@ -17,13 +17,15 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "uuid", "xmlString",
-    "storageHttpTuple", "storageHttpFilenames" })
+@XmlType(name = "", propOrder = { "authentication", "uuid", "resourceType",
+  "xmlString", "storageHttpTuple", "storageHttpFilenames" })
 @XmlRootElement(name = "getImageRequest")
 public class GetImageRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
   protected String uuid;
+  @XmlElement(required = true)
+  protected String resourceType;
   protected String xmlString;
   protected StorageHttpTuple storageHttpTuple;
   protected List<String> storageHttpFilenames;
@@ -113,5 +115,19 @@ public class GetImageRequest {
       storageHttpFilenames = new ArrayList<String>();
     }
     return this.storageHttpFilenames;
+  }
+
+  /**
+   * Gets the value of the resourceType property.
+   */
+  public String getResourceType() {
+    return resourceType;
+  }
+
+  /**
+   * Sets the value of the resourceType property.
+   */
+  public void setResourceType(String resourceType) {
+    this.resourceType = resourceType;
   }
 }

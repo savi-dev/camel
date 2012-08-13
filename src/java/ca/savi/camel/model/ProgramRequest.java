@@ -15,13 +15,15 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "uuid", "imageUuid",
-    "serviceEndpoint", "xmlString" })
+@XmlType(name = "", propOrder = { "authentication", "uuid", "resourceType",
+"imageUuid", "serviceEndpoint", "xmlString" })
 @XmlRootElement(name = "programRequest")
 public class ProgramRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
   protected String uuid;
+  @XmlElement(required = true)
+  protected String resourceType;
   protected String imageUuid;
   protected String serviceEndpoint;
   protected String xmlString;
@@ -104,5 +106,19 @@ public class ProgramRequest {
    */
   public void setServiceEndpoint(String serviceEndpoint) {
     this.serviceEndpoint = serviceEndpoint;
+  }
+
+  /**
+   * Gets the value of the resourceType property.
+   */
+  public String getResourceType() {
+    return resourceType;
+  }
+
+  /**
+   * Sets the value of the resourceType property.
+   */
+  public void setResourceType(String resourceType) {
+    this.resourceType = resourceType;
   }
 }

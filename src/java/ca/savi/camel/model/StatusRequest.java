@@ -15,12 +15,15 @@ import javax.xml.bind.annotation.XmlType;
  * @version 0.4
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "authentication", "uuid", "xmlString" })
+@XmlType(name = "", propOrder = { "authentication", "uuid","resourceType",
+"xmlString" })
 @XmlRootElement(name = "statusRequest")
 public class StatusRequest {
   @XmlElement(required = true)
   protected SecurityObject authentication;
   protected String uuid;
+  @XmlElement(required = true)
+  protected String resourceType;
   protected String xmlString;
 
   /**
@@ -69,5 +72,19 @@ public class StatusRequest {
    */
   public void setXmlString(String value) {
     this.xmlString = value;
+  }
+
+  /**
+   * Gets the value of the resourceType property.
+   */
+  public String getResourceType() {
+    return resourceType;
+  }
+
+  /**
+   * Sets the value of the resourceType property.
+   */
+  public void setResourceType(String resourceType) {
+    this.resourceType = resourceType;
   }
 }
